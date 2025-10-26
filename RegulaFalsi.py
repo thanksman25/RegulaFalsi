@@ -1,10 +1,3 @@
-# ============================================================
-# feat(core): menambahkan fungsi utama metode Regula Falsi
-# ------------------------------------------------------------
-# Logika utama untuk menghitung akar persamaan non-linear
-# menggunakan metode Regula Falsi secara iteratif.
-# ============================================================
-
 import tkinter as tk
 from tkinter import ttk, messagebox
 import math
@@ -46,3 +39,27 @@ def regula_falsi(f_str, a, b, tol, max_iter):
             fa = fxr
 
     return data
+
+def hitung():
+    try:
+        f_str = entry_f.get()
+        a = float(entry_a.get())
+        b = float(entry_b.get())
+        tol = float(entry_tol.get())
+        max_iter = int(entry_iter.get())
+
+        # Hapus tabel sebelumnya
+        for item in tree.get_children():
+            tree.delete(item)
+
+        # Jalankan metode Regula Falsi
+        hasil = regula_falsi(f_str, a, b, tol, max_iter)
+
+        # Masukkan hasil ke tabel
+        for i, row in enumerate(hasil):
+            tag = 'evenrow' if i % 2 == 0 else 'oddrow'
+            tree.insert("", "end", values=[f"{v:.9f}" if isinstance(v, float) else v for v in row], tags=(tag,))
+
+    except Exception as e:
+        messagebox.showerror("Error", f"Terjadi kesalahan: {e}")
+
