@@ -127,3 +127,15 @@ tk.Label(frame_input, text="Jumlah iterasi:", bg="#F8FAFD", fg="#2E4057", font=(
 entry_iter = tk.Entry(frame_input, width=15, font=("Consolas", 10))
 entry_iter.grid(row=4, column=1, sticky="w", padx=10)
 
+# Tombol aksi
+frame_btn = tk.Frame(root, bg="#E9EEF5")
+frame_btn.pack(pady=10)
+btn_hitung = tk.Button(frame_btn, text="▶ Hitung", command=hitung, bg="#4ABCE2", fg="white",
+font=("Segoe UI", 10, "bold"), relief="flat", width=15)
+btn_hitung.pack(side="left", padx=10)
+
+btn_hapus = tk.Button(frame_btn, text="🗑 Hapus Tabel", command=hapus_tabel, bg="#E74C3C", fg="white",
+font=("Segoe UI", 10, "bold"), relief="flat", width=15)
+btn_hapus.pack(side="left", padx=10)
+
+
