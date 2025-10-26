@@ -78,4 +78,19 @@ def hapus_tabel():
     # Tampilkan notifikasi sederhana
     messagebox.showinfo("Hapus Data", "Tabel dan input berhasil dikosongkan.")
 
+root = tk.Tk()
+root.title("🧮 Kalkulator Metode Regula Falsi")
+root.geometry("1200x700")
+root.config(bg="#E9EEF5")
 
+# Judul utama aplikasi
+judul = tk.Label(
+    root,
+    text="Kalkulator Metode Regula Falsi",
+    font=("Segoe UI", 18, "bold"),
+    bg="#3E5879",
+    fg="white",
+    pady=10
+)
+judul.pack(fill="x")
+judul.pack(fill="x")
