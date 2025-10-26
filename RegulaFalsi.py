@@ -138,4 +138,27 @@ btn_hapus = tk.Button(frame_btn, text="🗑 Hapus Tabel", command=hapus_tabel, b
 font=("Segoe UI", 10, "bold"), relief="flat", width=15)
 btn_hapus.pack(side="left", padx=10)
 
+frame_tabel = tk.LabelFrame(root, text="Hasil Iterasi", font=("Segoe UI", 11, "bold"),
+bg="#F8FAFD", fg="#3E5879", padx=10, pady=10, labelanchor="n")
+frame_tabel.pack(padx=20, pady=10, fill="both", expand=True)
+
+columns = ("Iterasi", "a", "b", "f(a)", "f(b)", "xr", "f(xr)", "f(xr)*f(b)", "|f(xr)|")
+tree = ttk.Treeview(frame_tabel, columns=columns, show="headings", height=15)
+for col in columns:
+    tree.heading(col, text=col)
+    tree.column(col, width=120, anchor="center")
+
+# Pewarnaan baris tabel
+tree.tag_configure('evenrow', background="#F1F6FC")
+tree.tag_configure('oddrow', background="#FFFFFF")
+
+# Scrollbar vertikal
+scrollbar = ttk.Scrollbar(frame_tabel, orient="vertical", command=tree.yview)
+tree.configure(yscroll=scrollbar.set)
+scrollbar.pack(side="right", fill="y")
+tree.pack(fill="both", expand=True)
+
+# Jalankan GUI
+root.mainloop()
+
 
