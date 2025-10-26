@@ -63,3 +63,19 @@ def hitung():
     except Exception as e:
         messagebox.showerror("Error", f"Terjadi kesalahan: {e}")
 
+def hapus_tabel():
+    # Hapus semua baris pada tabel hasil
+    for item in tree.get_children():
+        tree.delete(item)
+
+    # Kosongkan semua input field
+    entry_f.delete(0, tk.END)
+    entry_a.delete(0, tk.END)
+    entry_b.delete(0, tk.END)
+    entry_tol.delete(0, tk.END)
+    entry_iter.delete(0, tk.END)
+
+    # Tampilkan notifikasi sederhana
+    messagebox.showinfo("Hapus Data", "Tabel dan input berhasil dikosongkan.")
+
+
