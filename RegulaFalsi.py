@@ -93,4 +93,37 @@ judul = tk.Label(
     pady=10
 )
 judul.pack(fill="x")
-judul.pack(fill="x")
+
+frame_input = tk.LabelFrame(
+    root,
+    text="Input Parameter",
+    font=("Segoe UI", 11, "bold"),
+    bg="#F8FAFD",
+    fg="#3E5879",
+    padx=15,
+    pady=10,
+    labelanchor="n"
+)
+frame_input.pack(pady=15, padx=20, fill="x")
+
+# Field input
+tk.Label(frame_input, text="Masukkan f(x):", bg="#F8FAFD", fg="#2E4057", font=("Segoe UI", 10)).grid(row=0, column=0, sticky="w", pady=5)
+entry_f = tk.Entry(frame_input, width=40, font=("Consolas", 10))
+entry_f.grid(row=0, column=1, padx=10, pady=5)
+
+tk.Label(frame_input, text="Nilai tebakan a:", bg="#F8FAFD", fg="#2E4057", font=("Segoe UI", 10)).grid(row=1, column=0, sticky="w", pady=5)
+entry_a = tk.Entry(frame_input, width=15, font=("Consolas", 10))
+entry_a.grid(row=1, column=1, sticky="w", padx=10)
+
+tk.Label(frame_input, text="Nilai tebakan b:", bg="#F8FAFD", fg="#2E4057", font=("Segoe UI", 10)).grid(row=2, column=0, sticky="w", pady=5)
+entry_b = tk.Entry(frame_input, width=15, font=("Consolas", 10))
+entry_b.grid(row=2, column=1, sticky="w", padx=10)
+
+tk.Label(frame_input, text="Toleransi error:", bg="#F8FAFD", fg="#2E4057", font=("Segoe UI", 10)).grid(row=3, column=0, sticky="w", pady=5)
+entry_tol = tk.Entry(frame_input, width=15, font=("Consolas", 10))
+entry_tol.grid(row=3, column=1, sticky="w", padx=10)
+
+tk.Label(frame_input, text="Jumlah iterasi:", bg="#F8FAFD", fg="#2E4057", font=("Segoe UI", 10)).grid(row=4, column=0, sticky="w", pady=5)
+entry_iter = tk.Entry(frame_input, width=15, font=("Consolas", 10))
+entry_iter.grid(row=4, column=1, sticky="w", padx=10)
+
